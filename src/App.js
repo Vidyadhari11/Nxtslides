@@ -43,6 +43,12 @@ const initialSlidesList = [
   },
 ]
 
+const insert = (arr, index, newItem) => [
+  ...arr.slice(0, index),
+  newItem,
+  ...arr.slice(index),
+]
+
 // Replace your code here
 class App extends Component {
   state = {initialList: initialSlidesList, activeIndex: 0}
@@ -55,8 +61,7 @@ class App extends Component {
     const {activeIndex} = this.state
     this.setState(prevState => {
       const {initialList} = prevState
-      const newList = initialList.splice(activeIndex + 1, item)
-      // const newList = insert(initialList, activeIndex + 1, item)
+      const newList = insert(initialList, activeIndex + 1, item)
       return {initialList: [...newList]}
     })
   }
