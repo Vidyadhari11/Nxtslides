@@ -98,7 +98,7 @@ class App extends Component {
     const {activeIndex, initialList} = this.state
 
     return (
-      <div className="bg-container">
+      <div>
         <div className="header">
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-slides/nxt-slides-logo.png"
